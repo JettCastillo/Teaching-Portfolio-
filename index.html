@@ -17,22 +17,90 @@
             color: #fff;
             padding: 1em 0;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        header h1 {
+            display: inline;
+            margin-left: 10px;
         }
         nav {
             background: #444;
             color: #fff;
             padding: 0.5em;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 60px; /* Adjust based on header height */
+            left: 0;
+            z-index: 999;
         }
-        nav a {
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+        nav ul li a {
             color: #fff;
             margin: 0 1em;
             text-decoration: none;
+            padding: 0.5em 1em;
+            display: inline-block;
+        }
+        nav ul li:hover > a {
+            background: #555;
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            padding: 0;
+            z-index: 1000;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul li ul li {
+            display: block;
+        }
+        nav ul li ul li a {
+            display: block;
+            padding: 0.5em 1em;
+            white-space: nowrap;
+        }
+        nav ul li ul li a:hover {
+            background: #fff;
+            color: #444;
         }
         .container {
             padding: 2em;
+            margin-top: 120px; /* Adjust based on combined header and nav height */
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 800px; /* Adjust width to center content */
         }
-        h1, h2, h3 {
+        section {
+            border: 1px solid #ddd;
+            padding: 1em;
+            margin-bottom: 2em;
+            background: #f9f9f9;
+        }
+        h2 {
             color: #444;
         }
         footer {
@@ -40,6 +108,9 @@
             color: #fff;
             text-align: center;
             padding: 1em 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
         .resume-button {
             display: block;
@@ -57,23 +128,48 @@
             padding: 0.5em;
             margin: 0.5em 0;
         }
+        .project {
+            margin-bottom: 2em;
+        }
+        .project img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 1em;
+        }
+        .social-media {
+            margin-top: 1em;
+        }
+        .social-media a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
+        <img src="your-photo.jpg" alt="[Your Name]">
         <h1>Professional Portfolio - [Your Name]</h1>
     </header>
     <nav>
-        <a href="#about">About Me</a>
-        <a href="#education">Educational Attainment</a>
-        <a href="#experience">Work Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#philosophy">Teaching Philosophy</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
-        <a href="#resources">Links & Resources</a>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Educational Attainment</a></li>
+            <li><a href="#experience">Work Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#philosophy">Teaching Philosophy</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li>
+                <a href="#">More</a>
+                <ul>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#resources">Links & Resources</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
     <div class="container">
         <section id="about">
@@ -116,16 +212,22 @@
         </section>
         <section id="projects">
             <h2>Projects</h2>
-            <ul>
-                <li>
-                    <h3>[Project Title]</h3>
-                    <p>[Brief description of the project, highlighting your role and achievements]</p>
-                </li>
-                <li>
-                    <h3>[Project Title]</h3>
-                    <p>[Brief description of the project, highlighting your role and achievements]</p>
-                </li>
-            </ul>
+       	    <div class="project">
+           	 <h3>Interactive Science Lab</h3>
+          	 <p><strong>Objective:</strong> Enhance student engagement through hands-on learning.</p>
+           	 <p><strong>Methodology:</strong> Developed and implemented an interactive science lab using digital simulations and real-world experiments.</p>
+           	 <p><strong>Challenges:</strong> Limited resources and initial resistance from students.</p>
+           	 <p><strong>Outcome:</strong> Significant improvement in student participation and understanding of scientific concepts, as evidenced by a 20% increase in test scores.</p>
+            	 <img src="images/science-lab.jpg" alt="Interactive Science Lab">
+             </div>
+             <div class="project">
+            	 <h3>Creative Writing Workshop</h3>
+            	 <p><strong>Objective:</strong> Foster creativity and improve writing skills.</p>
+            	 <p><strong>Methodology:</strong> Conducted workshops where students wrote and critiqued each other’s stories. Utilized multimedia prompts to inspire creativity.</p>
+            	 <p><strong>Challenges:</strong> Varying levels of student confidence and skill.</p>
+           	 <p><strong>Outcome:</strong> Noticeable improvement in writing quality and student confidence, with several students submitting their work to writing competitions.</p>
+          	 <img src="images/writing-workshop.jpg" alt="Creative Writing Workshop">
+       	     </div>
         </section>
         <section id="philosophy">
             <h2>Teaching Philosophy</h2>
@@ -153,18 +255,22 @@
             <h2>Resume</h2>
             <a href="resume.pdf" class="resume-button">Download Resume</a>
         </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br>
-                <label for="email">Email:</label><br>
-                <input type="text" id="email" name="email"><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message"></textarea><br>
-                <input type="submit" value="Send">
-            </form>
-        </section>
+    	<section id="contact">
+    	    <h2>Contact</h2>
+    	    <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+    	        <label for="name">Name:</label><br>
+    	        <input type="text" id="name" name="name"><br>
+	        <label for="email">Email:</label><br>
+          	<input type="email" id="email" name="email"><br>
+            	<label for="message">Message:</label><br>
+            	<textarea id="message" name="message"></textarea><br>
+            	<input type="submit" value="Send">
+      	 	</form>
+      	     <div class="social-media">
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+               <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+      	     </div>
+    	</section>
         <section id="resources">
             <h2>Links & Resources</h2>
             <ul>
