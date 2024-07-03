@@ -145,6 +145,34 @@
             text-decoration: none;
             margin-right: 10px;
         }
+        @media (max-width: 768px) {
+            header h1 {
+                display: block;
+                margin-left: 0;
+            }
+            nav ul li {
+                display: block;
+                margin: 0.5em 0;
+            }
+            .container {
+                padding: 1em;
+                margin-top: 140px; /* Adjust based on combined header and nav height */
+            }
+        }
+        @media (max-width: 480px) {
+            header img {
+                width: 40px;
+                height: 40px;
+            }
+            nav ul li a {
+                padding: 0.5em;
+                margin: 0;
+            }
+            .container {
+                margin-top: 160px; /* Adjust based on combined header and nav height */
+                padding: 0.5em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -212,22 +240,22 @@
         </section>
         <section id="projects">
             <h2>Projects</h2>
-       	    <div class="project">
-           	 <h3>Interactive Science Lab</h3>
-          	 <p><strong>Objective:</strong> Enhance student engagement through hands-on learning.</p>
-           	 <p><strong>Methodology:</strong> Developed and implemented an interactive science lab using digital simulations and real-world experiments.</p>
-           	 <p><strong>Challenges:</strong> Limited resources and initial resistance from students.</p>
-           	 <p><strong>Outcome:</strong> Significant improvement in student participation and understanding of scientific concepts, as evidenced by a 20% increase in test scores.</p>
-            	 <img src="images/science-lab.jpg" alt="Interactive Science Lab">
-             </div>
-             <div class="project">
-            	 <h3>Creative Writing Workshop</h3>
-            	 <p><strong>Objective:</strong> Foster creativity and improve writing skills.</p>
-            	 <p><strong>Methodology:</strong> Conducted workshops where students wrote and critiqued each other’s stories. Utilized multimedia prompts to inspire creativity.</p>
-            	 <p><strong>Challenges:</strong> Varying levels of student confidence and skill.</p>
-           	 <p><strong>Outcome:</strong> Noticeable improvement in writing quality and student confidence, with several students submitting their work to writing competitions.</p>
-          	 <img src="images/writing-workshop.jpg" alt="Creative Writing Workshop">
-       	     </div>
+            <div class="project">
+                <h3>Interactive Science Lab</h3>
+                <p><strong>Objective:</strong> Enhance student engagement through hands-on learning.</p>
+                <p><strong>Methodology:</strong> Developed and implemented an interactive science lab using digital simulations and real-world experiments.</p>
+                <p><strong>Challenges:</strong> Limited resources and initial resistance from students.</p>
+                <p><strong>Outcome:</strong> Significant improvement in student participation and understanding of scientific concepts, as evidenced by a 20% increase in test scores.</p>
+                <img src="images/science-lab.jpg" alt="Interactive Science Lab">
+            </div>
+            <div class="project">
+                <h3>Creative Writing Workshop</h3>
+                <p><strong>Objective:</strong> Foster creativity and improve writing skills.</p>
+                <p><strong>Methodology:</strong> Conducted workshops where students wrote and critiqued each other’s stories. Utilized multimedia prompts to inspire creativity.</p>
+                <p><strong>Challenges:</strong> Varying levels of student confidence and skill.</p>
+                <p><strong>Outcome:</strong> Noticeable improvement in writing quality and student confidence, with several students submitting their work to writing competitions.</p>
+                <img src="images/writing-workshop.jpg" alt="Creative Writing Workshop">
+            </div>
         </section>
         <section id="philosophy">
             <h2>Teaching Philosophy</h2>
@@ -255,22 +283,22 @@
             <h2>Resume</h2>
             <a href="resume.pdf" class="resume-button">Download Resume</a>
         </section>
-    	<section id="contact">
-    	    <h2>Contact</h2>
-    	    <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
-    	        <label for="name">Name:</label><br>
-    	        <input type="text" id="name" name="name"><br>
-	        <label for="email">Email:</label><br>
-          	<input type="email" id="email" name="email"><br>
-            	<label for="message">Message:</label><br>
-            	<textarea id="message" name="message"></textarea><br>
-            	<input type="submit" value="Send">
-      	 	</form>
-      	     <div class="social-media">
+        <section id="contact">
+            <h2>Contact</h2>
+            <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br>
+                <input type="submit" value="Send">
+            </form>
+            <div class="social-media">
                 <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
-               <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
-      	     </div>
-    	</section>
+                <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            </div>
+        </section>
         <section id="resources">
             <h2>Links & Resources</h2>
             <ul>
