@@ -10,18 +10,18 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             color: #333;
         }
         header {
             background: #333;
             color: #fff;
-            padding: 1em 0;
-            text-align: center;
+            padding: 1em;
             position: fixed;
+            text-align: center;
             width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
         }
         header img {
             width: 50px;
@@ -36,63 +36,38 @@
         nav {
             background: #444;
             color: #fff;
-            padding: 0.5em;
-            text-align: center;
+            padding: 1em;
             position: fixed;
-            width: 100%;
-            top: 60px; /* Adjust based on header height */
+            top: 83px;
+            bottom: 0;
             left: 0;
-            z-index: 999;
+            width: 200px;
+
         }
         nav ul {
             list-style: none;
-            margin: 0;
             padding: 0;
+            margin: 0;
         }
         nav ul li {
-            display: inline-block;
-            position: relative;
+            margin-bottom: 1em;
         }
         nav ul li a {
             color: #fff;
-            margin: 0 1em;
             text-decoration: none;
-            padding: 0.5em 1em;
-            display: inline-block;
+            display: block;
+            padding: 0.5em;
+            border-radius: 5px;
         }
-        nav ul li:hover > a {
+        nav ul li a:hover {
             background: #555;
         }
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #444;
-            padding: 0;
-            z-index: 1000;
-        }
-        nav ul li:hover ul {
-            display: block;
-        }
-        nav ul li ul li {
-            display: block;
-        }
-        nav ul li ul li a {
-            display: block;
-            padding: 0.5em 1em;
-            white-space: nowrap;
-        }
-        nav ul li ul li a:hover {
-            background: #fff;
-            color: #444;
-        }
         .container {
+            margin-top: 80px;
+            margin-left: 240px; /* Adjust this based on nav width */
+            margin-right: 220px;
             padding: 2em;
-            margin-top: 120px; /* Adjust based on combined header and nav height */
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 800px; /* Adjust width to center content */
+            flex: 1;
         }
         section {
             border: 1px solid #ddd;
@@ -109,7 +84,6 @@
             text-align: center;
             padding: 1em 0;
             position: relative;
-            bottom: 0;
             width: 100%;
         }
         .resume-button {
@@ -146,17 +120,22 @@
             margin-right: 10px;
         }
         @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 1em 0;
+            }
+            .container {
+                margin-left: 0;
+                padding: 1em;
+            }
+            header {
+                padding: 0.5em;
+            }
             header h1 {
                 display: block;
                 margin-left: 0;
-            }
-            nav ul li {
-                display: block;
-                margin: 0.5em 0;
-            }
-            .container {
-                padding: 1em;
-                margin-top: 140px; /* Adjust based on combined header and nav height */
             }
         }
         @media (max-width: 480px) {
@@ -164,12 +143,7 @@
                 width: 40px;
                 height: 40px;
             }
-            nav ul li a {
-                padding: 0.5em;
-                margin: 0;
-            }
             .container {
-                margin-top: 160px; /* Adjust based on combined header and nav height */
                 padding: 0.5em;
             }
         }
@@ -188,15 +162,11 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#philosophy">Teaching Philosophy</a></li>
             <li><a href="#certifications">Certifications</a></li>
-            <li>
-                <a href="#">More</a>
-                <ul>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#resources">Links & Resources</a></li>
-                </ul>
-            </li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#resources">Links & Resources</a></li>
+
         </ul>
     </nav>
     <div class="container">
