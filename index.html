@@ -22,6 +22,7 @@
             position: fixed;
             text-align: center;
             width: 100%;
+            z-index: 1000;
         }
         header img {
             width: 50px;
@@ -42,7 +43,7 @@
             bottom: 0;
             left: 0;
             width: 200px;
-
+            transition: transform 0.3s ease;
         }
         nav ul {
             list-style: none;
@@ -65,7 +66,7 @@
         .container {
             margin-top: 80px;
             margin-left: 240px; /* Adjust this based on nav width */
-            margin-right: 220px;
+            margin-right: 20px;
             padding: 2em;
             flex: 1;
         }
@@ -119,12 +120,28 @@
             text-decoration: none;
             margin-right: 10px;
         }
+        .menu-toggle {
+            display: none;
+            background: #444;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 60px;
+            left: 10px;
+            z-index: 1001;
+        }
         @media (max-width: 768px) {
             nav {
                 width: 100%;
                 height: auto;
                 position: relative;
                 padding: 1em 0;
+                transform: translateY(-100%);
+            }
+            nav.open {
+                transform: translateY(0);
             }
             .container {
                 margin-left: 0;
@@ -136,6 +153,9 @@
             header h1 {
                 display: block;
                 margin-left: 0;
+            }
+            .menu-toggle {
+                display: block;
             }
         }
         @media (max-width: 480px) {
@@ -153,6 +173,7 @@
     <header>
         <img src="your-photo.jpg" alt="[Your Name]">
         <h1>Professional Portfolio - [Your Name]</h1>
+        <button class="menu-toggle">Menu</button>
     </header>
     <nav>
         <ul>
@@ -166,7 +187,6 @@
             <li><a href="#resume">Resume</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#resources">Links & Resources</a></li>
-
         </ul>
     </nav>
     <div class="container">
@@ -282,5 +302,10 @@
     <footer>
         <p>&copy; 2024 [Your Name]. All Rights Reserved.</p>
     </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
